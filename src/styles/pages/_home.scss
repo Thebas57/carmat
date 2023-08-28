@@ -4,33 +4,32 @@
   background-image: url("../../../public/img/fond1.png");
   background-size: 200%; /* Ajuste la taille de l'image pour couvrir le conteneur */
   background-position: center center;
-  background-repeat: no-repeat, repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-repeat: no-repeat;
 }
 
-.click-container{
-    animation : click 2s ease infinite; /* Agrandissement du contenu au survol */
+.click-container {
+  position: fixed;
+  animation: click 2s ease infinite; /* Agrandissement du contenu au survol */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.click{
-    cursor: pointer;
-    position: fixed;
-    border-radius: 50%;
-    padding: 5px 10px 5px 5px;
-    border: 1px solid black;
-    svg{
-        font-size: 50px;
-    }
+.click {
+  cursor: pointer;
+  border-radius: 50%;
+  svg {
+    font-size: 50px;
+    fill: aliceblue;
+  }
 }
 
 @keyframes click {
-    0%,
-    100% {
-      transform: scale(0.8);
-    }
-    50% {
-      transform: scale(0.6);
-    }
+  0%,
+  100% {
+    transform: scale(0.8);
   }
+  50% {
+    transform: scale(0.6);
+  }
+}
