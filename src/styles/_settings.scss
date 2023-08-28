@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@300&family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&family=Pacifico&family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Pacifico&family=Source+Sans+Pro:wght@400;600;700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+
+$font-1: "Raleway", sans-serif;
+$font-2: "Cormorant Upright", sans-serif;
+$font-3: "Maven Pro", sans-serif;
+$font-4: "Pacifico", cursive;
+$font-5: "Ubuntu Mono", monospace;
+$color-1: #dbeeee;
+$color-2: #3d9090;
+$color-3: #c4c4c4;
+$color-4: #e4d7b9;
+
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: inline-block;
+}
+
+a {
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: "Source Sans Pro", sans-serif;
+}
