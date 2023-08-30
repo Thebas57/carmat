@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import TypeIt from "typeit-react";
 import { GrGallery, GrContactInfo } from "react-icons/gr";
+import { NavLink } from "react-router-dom";
 
 const Carmat = () => {
   return (
@@ -40,13 +41,15 @@ const Carmat = () => {
         </span>
         <span className="href">
           <GrContactInfo />
-          <a
-            href="https://stacksorted.com/links/awwwards"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contact
-          </a>{" "}
+          <NavLink to="/contact">
+            <a
+              href="https://stacksorted.com/links/awwwards"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Contact
+            </a>{" "}
+          </NavLink>
         </span>
       </div>
     </div>
