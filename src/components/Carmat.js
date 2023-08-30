@@ -1,25 +1,27 @@
 import React, { useEffect, useRef } from "react";
-import TypeIt from "typeit";
+import TypeIt from "typeit-react";
 
 const Carmat = () => {
-  const simpleUsageRef = useRef(null);
-
-  useEffect(() => {
-    if (simpleUsageRef.current) {
-      new TypeIt(simpleUsageRef.current, {
-        strings: "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
-        speed: 50,
-        waitUntilVisible: true,
-      }).go();
-    }
-  }, []);
-
   return (
     <div className="carmat-container">
       <div className="carmat">
-        Carmat est une entreprise spécialisée dans le carrelage située à Nancy.
-        Le siège social se situe à Ludres. gnagnagna
-        <p ref={simpleUsageRef}></p>
+        <TypeIt
+        options={{speed: 50}}
+          // autoStart = "true"
+          getBeforeInit={(instance) => {
+            instance
+              .type("Carmat est une entreprise spécialisée dans le carrelage.", {speed:100})
+              .break()
+              .pause(500)
+              .type("Elle est située à Nancy.")
+              .break()
+              .pause(500)
+              .type("Le siège social se situe à Ludres.");
+
+            // Remember to return it!
+            return instance;
+          }}
+        />
       </div>
     </div>
   );
