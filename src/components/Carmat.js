@@ -31,13 +31,15 @@ const Carmat = () => {
       <div className="direction">
         <span className="href">
           <GrGallery />
-          <a
-            href="https://stacksorted.com/links/awwwards"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Galerie
-          </a>{" "}
+          <NavLink to="/galerie">
+            <a
+              href="https://stacksorted.com/links/awwwards"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Galerie
+            </a>{" "}
+          </NavLink>
         </span>
         <span className="href">
           <GrContactInfo />

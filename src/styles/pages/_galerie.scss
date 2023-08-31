@@ -1,0 +1,70 @@
+.galerie {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../public/img/fond1.png");
+  background-size: 200%; /* Ajuste la taille de l'image pour couvrir le conteneur */
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.header {
+  display: flex;
+  height: 90px;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2rem;
+  .title {
+    color: orange;
+    font-family: $font-2;
+    font-size: 6rem;
+    font-weight: 900;
+    backdrop-filter: blur(1px);
+  }
+  .galerie-direction {
+    color: rgb(0, 0, 0);
+    font-family: $font-2;
+    font-size: 4rem;
+    font-weight: 900;
+    backdrop-filter: blur(1px);
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+  }
+  .galerie-direction::before {
+    content: "";
+    background: linear-gradient(
+      to right,
+      rgb(0, 0, 0) 45%,
+      rgba(0, 0, 0, 0.3) 55%
+    );
+    background-size: 220% 100%;
+    background-position: 100% 50%;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-out;
+    top: 90%;
+  }
+  .galerie-direction:hover::before {
+    background: linear-gradient(
+      to right,
+      rgb(0, 0, 0) 45%,
+      rgba(0, 0, 0, 0.3) 55%
+    );
+    background-size: 220% 100%;
+    background-position: 0% 50%;
+    transition: 0.3s ease-out;
+  }
+  .galerie-direction.activedirection::before{
+    background: linear-gradient(
+      to right,
+      rgb(0, 0, 0) 45%,
+      rgba(0, 0, 0, 0.3) 55%
+    );
+    background-size: 220% 100%;
+    background-position: 0% 50%;
+  }
+}

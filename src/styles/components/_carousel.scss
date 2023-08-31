@@ -1,0 +1,91 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 450px;
+  top: 12%;
+}
+
+.carouvisu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 350px;
+  top: 14%;
+}
+
+.carousel img {
+  max-height: 100%; /* Réduit la hauteur des images */
+  transition: transform 0.5 ease; /* Ajoute une transition fluide */
+}
+
+.carouvisu img {
+  max-height: 90%; /* Réduit la hauteur des images */
+  transition: transform 0.5 ease; /* Ajoute une transition fluide */
+}
+
+/* Image active plus grande */
+.active {
+  transform: scale(1.2) translateX(-50%); /* Agrandit et déplace l'image active */
+  z-index: 2; /* Place l'image active au-dessus des autres */
+  object-fit: cover; /* Ajuste l'ajustement de l'image */
+}
+
+/* Images adjacentes plus petites */
+.carousel img:not(.active) {
+  max-height: 80%; /* Réduit la taille des images non actives */
+  opacity: 0.9; /* Réduit l'opacité des images non actives */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Ajoute une transition pour l'opacité */
+  z-index: 1; /* Place les images non actives derrière l'image active */
+}
+
+.carouvisu img:not(.active) {
+  max-height: 70%; /* Réduit la taille des images non actives */
+  opacity: 0.9; /* Réduit l'opacité des images non actives */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Ajoute une transition pour l'opacité */
+  z-index: 1; /* Place les images non actives derrière l'image active */
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+/* Image active plus grande */
+.active {
+  transform: scale(1.2); /* Agrandit l'image active */
+  z-index: 2; /* Place l'image active au-dessus des autres */
+}
+
+/* Styles pour le survol des images adjacentes */
+.carousel img:not(.active),
+.carouvisu img:not(.active) {
+  /* ... Autres styles ... */
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease; /* Ajoute une transition pour le filtre de survol */
+  filter: blur(1px); /* Applique un effet de survol */
+  cursor: pointer;
+}
+
+.carousel img:not(.active):hover,
+.carouvisu img:not(.active):hover {
+  transform: scale(1.1); /* Agrandit l'image au survol */
+  filter: grayscale(0%) blur(0); /* Supprime l'effet de survol */
+  opacity: 1; /* Rétablit l'opacité au survol */
+}

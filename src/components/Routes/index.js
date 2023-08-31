@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "../../pages/Home";
 import Contact from "../../pages/Contact";
+import Galerie from "../../pages/Galerie";
 
 const index = () => {
   return (
@@ -14,6 +15,7 @@ const index = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/galerie" element={<Galerie />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
