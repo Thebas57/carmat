@@ -29,30 +29,12 @@ const Carmat = () => {
         />
       </div>
       <div className="direction">
-        <span className="href">
-          <GrGallery />
-          <NavLink to="/galerie">
-            <a
-              href="https://stacksorted.com/links/awwwards"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Galerie
-            </a>{" "}
-          </NavLink>
-        </span>
-        <span className="href">
-          <GrContactInfo />
-          <NavLink to="/contact">
-            <a
-              href="https://stacksorted.com/links/awwwards"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Contact
-            </a>{" "}
-          </NavLink>
-        </span>
+        <NavLink to="/galerie">
+          <button class="btn btn-3 btn-3d icon-cog">Galerie</button>
+        </NavLink>
+        <NavLink to="/contact">
+          <button class="btn btn-3 btn-3d icon-cog2">Contact</button>
+        </NavLink>
       </div>
     </div>
   );
