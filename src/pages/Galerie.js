@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Carousel from "../components/Carousel";
+import { motion } from "framer-motion";
 
 const Galerie = () => {
   const images = [
@@ -17,18 +18,42 @@ const Galerie = () => {
   const [galerieSwitch, setSwitch] = useState(false);
 
   return (
-    <div className="galerie">
+    <motion.div
+      className="galerie"
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="header">
-        <span className={galerieSwitch ? "galerie-direction" : "galerie-direction activedirection"} onClick={(e) => setSwitch(false)}>Nos produits</span>
+        <span
+          className={
+            galerieSwitch
+              ? "galerie-direction"
+              : "galerie-direction activedirection"
+          }
+          onClick={(e) => setSwitch(false)}
+        >
+          Nos produits
+        </span>
         <span className="title">Galerie</span>
-        <span className={!galerieSwitch ? "galerie-direction" : "galerie-direction activedirection"} onClick={(e) => setSwitch(true)}>Nos visuels 3D</span>
+        <span
+          className={
+            !galerieSwitch
+              ? "galerie-direction"
+              : "galerie-direction activedirection"
+          }
+          onClick={(e) => setSwitch(true)}
+        >
+          Nos visuels 3D
+        </span>
       </div>
       {!galerieSwitch ? (
         <Carousel images={images} type={"produits"} />
       ) : (
         <Carousel images={visuels3D} type={"visuels"} />
       )}
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,10 +2,17 @@ import React, { useEffect, useRef } from "react";
 import TypeIt from "typeit-react";
 import { GrGallery, GrContactInfo } from "react-icons/gr";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Carmat = () => {
   return (
-    <div className="carmat-container">
+    <motion.div
+      className="carmat-container"
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="carmat">
         <TypeIt
           options={{ speed: 50 }}
@@ -30,13 +37,13 @@ const Carmat = () => {
       </div>
       <div className="direction">
         <NavLink to="/galerie">
-          <button class="btn btn-3 btn-3d icon-cog">Galerie</button>
+          <button className="btn btn-3 btn-3d icon-cog">Galerie</button>
         </NavLink>
         <NavLink to="/contact">
-          <button class="btn btn-3 btn-3d icon-cog2">Contact</button>
+          <button className="btn btn-3 btn-3d icon-cog2">Contact</button>
         </NavLink>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
