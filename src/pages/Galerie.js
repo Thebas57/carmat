@@ -56,7 +56,7 @@ const Galerie = () => {
       )}
       <div className="back-galerie">
         <NavLink to="/">
-          <button class="btn btn-5 btn-5a icon-cart">
+          <button className="btn btn-5 btn-5a icon-cart">
             <span>Accueil</span>
           </button>
         </NavLink>

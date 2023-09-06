@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiCursorClick } from "react-icons/hi";
 import Carmat from "../components/Carmat";
+import { useClickContext } from "../components/ClickContext";
 
 const Home = () => {
-  const [isClick, setIsClick] = useState(false);
+
+  const { isClick, toggleClick } = useClickContext();
+
   return (
     <div className="home">
       <div className="click-container">
-        <div className="click" onClick={(e) => setIsClick(!isClick)}>
-          <HiCursorClick />
-        </div>
+        {!isClick ? (
+          <div className="click" onClick={(e) => toggleClick()}>
+            <HiCursorClick />
+          </div>
+        ) : null}
       </div>
       {isClick ? <Carmat /> : null}
     </div>
