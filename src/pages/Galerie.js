@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Carousel from "../components/Carousel";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const Galerie = () => {
   const images = [
@@ -53,6 +54,13 @@ const Galerie = () => {
       ) : (
         <Carousel images={visuels3D} type={"visuels"} />
       )}
+      <div className="back-galerie">
+        <NavLink to="/">
+          <button class="btn btn-5 btn-5a icon-cart">
+            <span>Accueil</span>
+          </button>
+        </NavLink>
+      </div>
     </motion.div>
   );
 };

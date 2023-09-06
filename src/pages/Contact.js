@@ -62,6 +62,13 @@ const Contact = () => {
           </NavLink>
         </div>
       </div>
+      <div className="back-contact">
+        <NavLink to="/">
+          <button class="btn btn-5 btn-5a icon-cart">
+            <span>Accueil</span>
+          </button>
+        </NavLink>
+      </div>
     </div>
   );
 };
