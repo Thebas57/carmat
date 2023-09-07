@@ -13,53 +13,73 @@ import { NavLink } from "react-router-dom";
 const Contact = () => {
   return (
     <div className="contact">
-      <div className="contact-container">
-        <div className="contact-info">
-          <div className="contact-section">
-            <span className="contact-icon">
-              <BiSolidPhoneCall />
-            </span>
-            <h2>Contactez-nous par téléphone</h2>
-            <h3>06 73 06 41 29</h3>
-          </div>
-          <div className="divider"></div>
-          <div className="contact-section">
-            <span className="contact-icon">
-              {" "}
-              <HiMail />
-            </span>
-            <h2>Nous contacter</h2>
-            <h3>theo@gmail.com</h3>
-            <button>CONTACT</button>
-          </div>
-          <div className="divider"></div>
-          <div className="contact-section">
-            <span className="contact-icon">
-              {" "}
-              <AiFillHome />
-            </span>
-            <h2>Notre équipe</h2>
-            <h3>36 allée des écoliers</h3>
-            <h3>54000 Nancy</h3>
-            <button>PLAN</button>
+      <div class="container">
+        <div className="grid-item">
+          <span className="grid-icon">
+            <AiFillHome />
+          </span>
+          <div className="grid-description">
+            <p className="first">CARMAT</p>
+            <p>Dynapôle de Ludres & Fléville</p>
+            <p>472 rue Antoine de Lavoisier</p>
+            <p>54710 Ludres</p>
           </div>
         </div>
+        <div className="grid-item">
+          <span className="grid-icon">
+            <BiSolidPhoneCall />
+          </span>
+          <div className="grid-description">
+            <p className="first">ESPACE VENTE</p>
+            <p>Du Lundi au Samedi</p>
+            <p>09h00 – 12h00</p>
+            <p>14h00 – 18h00</p>
+          </div>
+        </div>
+        <div className="grid-item">
+          <span className="grid-icon">
+            <BiSolidPhoneCall />
+          </span>
+          <div className="grid-description">
+            <p className="first">TÉLÉPHONE</p>
+            <p>+33 383 257 419</p>
+          </div>
+        </div>
+        <div className="grid-item">
+          <span className="grid-icon">
+            <HiMail />
+          </span>
+          <div className="grid-description">
+            <p className="first">EMAIL</p>
+            <p>contact@carmat.fr</p>
+          </div>
+        </div>
+      </div>
+      <div className="contact-container">
         <div className="contact-socials">
-          <NavLink target="_blank" to="https://github.com/Thebas57">
-            <FaGithub />
-          </NavLink>
-          <NavLink
-            target="_blank"
-            to="https://www.linkedin.com/in/th%C3%A9o-helf-446a51205/"
-          >
-            <FaLinkedin />
-          </NavLink>
-          <NavLink target="_blank" to="https://www.facebook.com/theo.helf/">
-            <FaFacebook />
-          </NavLink>
-          <NavLink target="_blank" to="https://www.instagram.com/teopianno/">
-            <FaInstagramSquare />
-          </NavLink>
+          <div className="contact-item">
+            <NavLink target="_blank" to="https://github.com/Thebas57">
+              <FaGithub />
+            </NavLink>
+          </div>
+          <div className="contact-item">
+            <NavLink
+              target="_blank"
+              to="https://www.linkedin.com/in/th%C3%A9o-helf-446a51205/"
+            >
+              <FaLinkedin />
+            </NavLink>
+          </div>
+          <div className="contact-item">
+            <NavLink target="_blank" to="https://www.facebook.com/theo.helf/">
+              <FaFacebook />
+            </NavLink>
+          </div>
+          <div className="contact-item">
+            <NavLink target="_blank" to="https://www.instagram.com/teopianno/">
+              <FaInstagramSquare />
+            </NavLink>
+          </div>
         </div>
       </div>
       <div className="back-contact">
