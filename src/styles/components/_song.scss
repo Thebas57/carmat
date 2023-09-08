@@ -1,0 +1,50 @@
+.song {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  cursor: pointer;
+  svg{
+    font-size: 2rem;
+    transform: translateY(-10px);
+  }
+}
+
+.line {
+  display: inline-block; 
+  border: 1px solid black;
+  background: black;
+  height: 1rem;
+  width: 2px;
+  margin: 0 0.1rem;
+
+  &.running {
+    animation: playSong 1s ease infinite;
+    &:nth-child(1){
+        animation-delay: 0.2s;
+    }
+    &:nth-child(2){
+        animation-delay: 0.3s;
+    }
+    &:nth-child(3){
+        animation-delay: 0.4s;
+    }
+    &:nth-child(4){
+        animation-delay: 0.5s;
+    }
+    &:nth-child(5){
+        animation-delay: 0.8s;
+    }
+  }
+}
+
+@keyframes playSong {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
