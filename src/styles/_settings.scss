@@ -45,3 +45,58 @@ body {
   color: black;
   font-family: "Source Sans Pro", sans-serif;
 }
+
+#bg1 {
+  --url-img: url("../../public/img/nuit2.jpg");
+  opacity: 0;
+}
+#bg2 {
+  --url-img: url("../../public/img/nuit2zoom.jpg");
+  opacity: 1;
+}
+
+
+.background-animation-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-initial {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/img/nuit2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1; /* Fond d'écran initial au-dessus du deuxième */
+}
+
+.background-second {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/img/nuit2zoom.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2; /* Deuxième fond d'écran au-dessus du premier */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.show-background {
+  opacity: 1;
+}
+
+.hide-background {
+  opacity: 0;
+}
+
+.content {
+  /* Styles pour le contenu de votre page */
+}
