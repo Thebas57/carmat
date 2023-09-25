@@ -7,14 +7,13 @@ function BackgroundAnimation() {
   useEffect(() => {
     // Fonction de gestionnaire de scroll
     const handleScroll = (event) => {
-      console.log(event)
       setScrollY(window.scrollY);
 
       // Ajoutez une condition pour déterminer quand afficher le deuxième fond d'écran
       if (event.deltaY > 0) {
         setShowSecondBackground(true);
       } else {
-        setShowSecondBackground(false);
+        //setShowSecondBackground(false);
       }
     };
 

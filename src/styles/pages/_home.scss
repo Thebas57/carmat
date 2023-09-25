@@ -16,7 +16,7 @@
 .click-container {
   position: fixed;
   animation: click 2s ease infinite; /* Agrandissement du contenu au survol */
-  top: 50%;
+  bottom: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
