@@ -1,6 +1,7 @@
 import React from "react";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { HiMail } from "react-icons/hi";
+import { motion } from "framer-motion";
 import { AiFillHome } from "react-icons/ai";
 import {
   FaGithub,
@@ -12,7 +13,13 @@ import { NavLink } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <motion.div
+      className="contact"
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ duration: 0.6 }}
+    >
       <div class="container">
         <div className="grid-item">
           <span className="grid-icon">
@@ -89,7 +96,7 @@ const Contact = () => {
           </button>
         </NavLink>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
