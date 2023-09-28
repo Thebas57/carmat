@@ -74,6 +74,7 @@ body {
   background-image: url("../../public/img/jour2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   z-index: 1; /* Fond d'écran initial au-dessus du deuxième */
 }
 
@@ -86,6 +87,7 @@ body {
   background-image: url("../../public/img/nuit2zoom.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   z-index: 2; /* Deuxième fond d'écran au-dessus du premier */
   opacity: 0;
   transition: opacity 1s ease-in-out;

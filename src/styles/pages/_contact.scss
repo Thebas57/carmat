@@ -56,10 +56,10 @@
   border-radius: 50px;
 }
 
-.contact-item{
+.contact-item {
   border: 2px solid black;
   background-color: rgba(255, 255, 255, 0.767);
-  svg{
+  svg {
     margin: 8px 8px 0px 8px;
   }
 }
@@ -98,7 +98,7 @@
   border: 2px solid black;
   padding: 20px;
   font-size: 2rem;
-  svg{
+  svg {
     margin: 8px 8px 0px 8px;
   }
 }
@@ -117,5 +117,35 @@
     font-weight: 400;
     text-transform: uppercase;
     color: #4c4c4c;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding-top: 200px;
+  }
+  .grid-item {
+    width: 85%;
+    padding: 15px;
+    .grid-icon {
+      padding: 10px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .container {
+    padding-top: 100px;
+    height: 70vh;
+    grid-template-columns: 1fr;
+  }
+  .grid-item {
+    width: 85%;
+    padding: 15px;
+    .grid-icon {
+      padding: 10px;
+      font-size: 1.5rem;
+    }
   }
 }

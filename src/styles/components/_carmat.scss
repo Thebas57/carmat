@@ -37,3 +37,46 @@
     margin-right: 10px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .carmat-container {
+    .carmat {
+      position: relative;
+      width: 90%;
+      left: 0%;
+      margin: 0 auto;
+    }
+    .direction{
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      right: inherit;
+      height: 50%;
+      top: 30%;
+      a{
+        display: flex;
+        justify-content: center;
+      }
+      .btn-3{
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .carmat-container {
+    .carmat {
+      position: relative;
+      width: 90%;
+      left: 0%;
+      margin: 0 auto;
+      font-size: 24px;
+    }
+    .direction {
+      .btn-3{
+        width: 90%;
+      }
+    }
+  }
+}
