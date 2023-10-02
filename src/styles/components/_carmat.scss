@@ -38,6 +38,83 @@
   }
 }
 
+.btn-carrelage {
+  background-color: transparent; /* Fond transparent */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2rem;
+  font-family: $font-4;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.btn-carrelage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://img.archiexpo.fr/images_ae/photo-g/87222-11642656.jpg"); /* Remplacez par le chemin de votre motif de carrelage */
+  background-size: 70%;
+  background-repeat: repeat; /* Répéter le motif */
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.btn-carrelage:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Couleur de fond au survol */
+}
+
+.btn-carrelage2 {
+  background-color: transparent; /* Fond transparent */
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 3rem;
+  font-family: $font-4;
+  margin: 10px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.7s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transform: rotate(45deg);
+  svg {
+    transform: rotate(-45deg);
+  }
+}
+
+.btn-carrelage2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.bricoman.fr/pub/media/catalog/product/f/e/9/e/carrelage_interieur_motif_l_x_l_cm_loop_1334123_picture_01.jpeg"); /* Remplacez par le chemin de votre motif de carrelage */
+  background-size: 100%;
+  background-repeat: repeat; /* Répéter le motif */
+  opacity: 1;
+  z-index: -1;
+}
+
+.btn-carrelage2:hover {
+  transform: rotate(405deg);
+}
+
 @media screen and (max-width: 1024px) {
   .carmat-container {
     .carmat {
@@ -46,18 +123,18 @@
       left: 0%;
       margin: 0 auto;
     }
-    .direction{
+    .direction {
       position: relative;
       width: 100%;
       margin: 0 auto;
       right: inherit;
       height: 50%;
       top: 30%;
-      a{
+      a {
         display: flex;
         justify-content: center;
       }
-      .btn-3{
+      .btn-3 {
         width: 50%;
       }
     }
@@ -74,7 +151,7 @@
       font-size: 24px;
     }
     .direction {
-      .btn-3{
+      .btn-3 {
         width: 90%;
       }
     }
