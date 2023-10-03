@@ -47,14 +47,14 @@ body {
   overflow: hidden;
 }
 
-#bg1 {
-  --url-img: url("../../public/img/nuit2.jpg");
-  opacity: 0;
+.day-theme {
+  --bg-img: url("../../public/img/jour2.jpg")
 }
-#bg2 {
-  --url-img: url("../../public/img/nuit2zoom.jpg");
-  opacity: 1;
+
+.night-theme {
+  --bg-img: url("../../public/img/nuit2.jpg")
 }
+
 
 .background {
   position: fixed;
@@ -82,7 +82,8 @@ body {
 }
 
 .background-image.img1 {
-  background-image: url("../../public/img/nuit2.jpg");
+  background-image: var(--bg-img);
+  transition: background-image 0.5s ease; /* Ajoutez la transition */
 }
 
 .background-image.img2 {
