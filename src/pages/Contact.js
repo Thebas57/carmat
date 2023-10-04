@@ -20,46 +20,43 @@ const Contact = () => {
       exit={{ x: "100%" }}
       transition={{ duration: 0.6 }}
     >
-      <div class="container">
-        <div className="grid-item">
-          <span className="grid-icon">
-            <AiFillHome />
-          </span>
-          <div className="grid-description">
-            <p className="first">CARMAT</p>
-            <p>Dynapôle de Ludres & Fléville</p>
-            <p>472 rue Antoine de Lavoisier</p>
-            <p>54710 Ludres</p>
+      <div className="all-contact-container">
+        <div class="container">
+          <div className="grid-item">
+            <span className="grid-icon">
+              <AiFillHome />
+            </span>
+            <div className="grid-description">
+              <p className="first">CARMAT</p>
+              <p>Dynapôle de Ludres & Fléville</p>
+              <p>472 rue Antoine de Lavoisier</p>
+              <p>54710 Ludres</p>
+            </div>
+          </div>
+          <div className="grid-item">
+            <span className="grid-icon">
+              <BiSolidPhoneCall />
+            </span>
+            <div className="grid-description">
+              <p className="first">ESPACE VENTE</p>
+              <p>Du Lundi au Samedi</p>
+              <p>09h00 – 12h00</p>
+              <p>14h00 – 18h00</p>
+            </div>
+          </div>
+          <div className="grid-item">
+            <span className="grid-icon">
+              <HiMail />
+            </span>
+            <div className="grid-description">
+              <p className="first">CONTACTEZ-NOUS</p>
+              <p>+33 383 257 419</p>
+              <p>contact@carmat.fr</p>
+            </div>
           </div>
         </div>
-        <div className="grid-item">
-          <span className="grid-icon">
-            <BiSolidPhoneCall />
-          </span>
-          <div className="grid-description">
-            <p className="first">ESPACE VENTE</p>
-            <p>Du Lundi au Samedi</p>
-            <p>09h00 – 12h00</p>
-            <p>14h00 – 18h00</p>
-          </div>
-        </div>
-        <div className="grid-item">
-          <span className="grid-icon">
-            <BiSolidPhoneCall />
-          </span>
-          <div className="grid-description">
-            <p className="first">TÉLÉPHONE</p>
-            <p>+33 383 257 419</p>
-          </div>
-        </div>
-        <div className="grid-item">
-          <span className="grid-icon">
-            <HiMail />
-          </span>
-          <div className="grid-description">
-            <p className="first">EMAIL</p>
-            <p>contact@carmat.fr</p>
-          </div>
+        <div className="img-contact">
+          <img src="./img/haloween/contact.png" alt="contacthalo" />
         </div>
       </div>
       <div className="contact-container">
