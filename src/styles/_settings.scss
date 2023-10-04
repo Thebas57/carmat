@@ -3,16 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@300&family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro&family=Pacifico&family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Pacifico&family=Source+Sans+Pro:wght@400;600;700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,400;0,700;1,600&display=swap');
 
-$font-1: "Raleway", sans-serif;
+$font-1: "Josefin Slab", sans-serif;
 $font-2: "Cormorant Upright", sans-serif;
 $font-3: "Maven Pro", sans-serif;
 $font-4: "Pacifico", cursive;
 $font-5: "Ubuntu Mono", monospace;
-$color-1: #dbeeee;
-$color-2: #3d9090;
-$color-3: #c4c4c4;
-$color-4: #e4d7b9;
+$color-1: #290256;
+$color-2: #FF762E;
+$color-3: #FFC303;
+$color-4: #000000;
 
 *,
 h1,
@@ -43,7 +44,7 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-1;
   overflow: hidden;
 }
 
