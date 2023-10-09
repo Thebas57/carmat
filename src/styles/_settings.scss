@@ -49,11 +49,14 @@ body {
 }
 
 .day-theme {
-  --bg-img: url("../../public/img/jour2.jpg")
+  //--bg-img: url("../../public/img/jour2.jpg")
+  --bg-img: url("../../public/img/haloween/place.jpg")
 }
 
 .night-theme {
-  --bg-img: url("../../public/img/nuit2.jpg")
+  //--bg-img: url("../../public/img/nuit2.jpg")
+  //--bg-img: url("../../public/img/jour2.jpg")
+  --bg-img: url("../../public/img/haloween/place.jpg")
 }
 
 

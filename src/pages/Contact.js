@@ -20,6 +20,9 @@ const Contact = () => {
       exit={{ x: "100%" }}
       transition={{ duration: 0.6 }}
     >
+      <video autoPlay muted loop id="background-video">
+        <source src="./img/haloween/fond.mp4" type="video/mp4" />
+      </video>
       <div className="all-contact-container">
         <div class="container">
           <div className="grid-item">

@@ -83,11 +83,11 @@
 
 .back-contact {
   position: absolute;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   top: 10px;
+  z-index: 10;
 }
 
 .container {
@@ -119,6 +119,17 @@
   svg {
     margin: 8px 8px 8px 8px;
   }
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 50% 50%;
+  z-index: -1;
 }
 
 .grid-description {

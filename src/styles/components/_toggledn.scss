@@ -5,11 +5,14 @@ $transition: .4s;
 
 .toggle-container{
     position: fixed;
-    top: 1rem;
-    width: 100vw;
+    top: 3rem;
+    width: 50vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    left: 50%; /* Définir la position horizontale souhaitée (25% pour la centrage horizontal à 50%) */
+    transform: translate(-50%, -50%); /* Centrer la div par rapport à elle-même */
 }
 
 .switch {

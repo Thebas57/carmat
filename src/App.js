@@ -18,7 +18,9 @@ function App() {
       <Routes />
       <Song />
       <BackgroundAnimation />
+      {/*
       <SwitchDayNight toggleDayNight={toggleDayNight} isDayNight={isDayNight} />
+      */}
     </div>
   );
 }
