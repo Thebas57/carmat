@@ -1,74 +1,79 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 .galerie {
   width: 100%;
   height: 100vh;
+  background: linear-gradient(220deg, $color-1, rgba(41, 2, 86, 0.1) 100%),
+    linear-gradient(180deg, white, rgba(255, 255, 255, 0.1) 100%),
+    linear-gradient(311deg, $color-3, rgba(255, 195, 3, 1) 100%);
 }
 
-.header {
-  display: flex;
-  height: 90px;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 2rem;
-  .title {
-    color: orange;
-    font-family: $font-1;
-    font-size: 6rem;
-    font-weight: 900;
-    backdrop-filter: blur(1px);
-  }
-  .galerie-direction {
-    color: rgb(0, 0, 0);
-    font-family: $font-1;
-    font-size: 4rem;
-    font-weight: 900;
-    backdrop-filter: blur(1px);
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-  }
-  .galerie-direction::before {
-    content: "";
-    background: linear-gradient(
-      to right,
-      rgb(0, 0, 0) 45%,
-      rgba(0, 0, 0, 0.3) 55%
-    );
-    background-size: 220% 100%;
-    background-position: 100% 50%;
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-repeat: no-repeat;
-    transition: 0.3s ease-out;
-    top: 90%;
-  }
-  .galerie-direction:hover::before {
-    background: linear-gradient(
-      to right,
-      rgb(0, 0, 0) 45%,
-      rgba(0, 0, 0, 0.3) 55%
-    );
-    background-size: 220% 100%;
-    background-position: 0% 50%;
-    transition: 0.3s ease-out;
-  }
-  .galerie-direction.activedirection::before{
-    background: linear-gradient(
-      to right,
-      rgb(0, 0, 0) 45%,
-      rgba(0, 0, 0, 0.3) 55%
-    );
-    background-size: 220% 100%;
-    background-position: 0% 50%;
-  }
-}
-
-.back-galerie{
-  position: absolute;
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 50% 50%;
+  z-index: -1;
+}
+
+.btn-galerie {
+  position: absolute;
   display: flex;
   align-items: center;
+  justify-content: center;
   bottom: 10px;
+  z-index: 10;
+}
+
+.slide-container {
+  width: 80vw;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.slide img {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.slide {
+  transform: scale(0.8);
+  transition: transform 300ms;
+  opacity: 0.5;
+  height: 100vh;
+  display: flex !important;
+  align-items: center;
+}
+
+.activeSlide {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 2.5rem;
+}
+
+.arrow svg {
+  transition: color 200ms;
+}
+
+.arrow svg:hover {
+  color: $color-2;
+}
+
+.next {
+  right: 0%;
+  top: 50%;
+}
+.prev {
+  left: 0%;
+  top: 50%;
 }
