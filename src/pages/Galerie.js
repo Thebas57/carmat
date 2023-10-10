@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Carousel from "../components/Carousel";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import Popup from "../components/Popup";
+import { useEffect } from "react";
 
 function PrevArrow({ onClick }) {
   return (
@@ -23,13 +24,34 @@ function NextArrow({ onClick }) {
 
 const Galerie = () => {
   const [imageIndex, setImageIndex] = useState(0);
+  const [isOpenPopup, setIsOpenPopup] = useState(false);
 
   const images = [
-    "./img/galerie/pdt1.jpg",
-    "./img/galerie/pdt2.jpg",
-    "./img/galerie/pdt3.jpg",
-    "./img/galerie/pdt3.jpg",
-    "./img/galerie/pdt3.jpg",
+    {
+      id: 1,
+      description: "Image 1",
+      src: "./img/galerie/pdt1.jpg",
+    },
+    {
+      id: 2,
+      description: "Image 2",
+      src: "./img/galerie/pdt2.jpg",
+    },
+    {
+      id: 3,
+      description: "Image 3",
+      src: "./img/galerie/pdt3.jpg",
+    },
+    {
+      id: 3,
+      description: "Image 3",
+      src: "./img/galerie/pdt3.jpg",
+    },
+    {
+      id: 3,
+      description: "Image 3",
+      src: "./img/galerie/pdt3.jpg",
+    },
   ];
 
   const settings = {
@@ -45,6 +67,36 @@ const Galerie = () => {
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
   };
+
+  const handleSlideClick = (index, e) => {
+    // Ouvrir le Popup avec l'index de la diapositive
+    setImageIndex(index);
+    setIsOpenPopup(true);
+    e.stopPropagation(); // Arrêter la propagation de l'événement
+  };
+
+  useEffect(() => {
+    console.log(isOpenPopup)
+    let popup = null;
+    if (isOpenPopup) popup = document.querySelector(".popup");
+    // Ajoutez un écouteur d'événements pour les clics sur l'ensemble de la page
+    const handleOutsideClick = (e) => {
+      // Vérifiez si le clic a été effectué en dehors du Popup
+      if (popup && !popup.contains(e.target) && isOpenPopup) {
+        // Fermez le Popup en appelant la fonction onClose
+        setIsOpenPopup(false);
+      }
+    };
+
+    // Ajoutez l'écouteur d'événements lors de l'ouverture du Popup
+    if(isOpenPopup)
+      document.addEventListener("click", handleOutsideClick);
+
+    // Nettoyez l'écouteur d'événements lors de la fermeture du Popup
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isOpenPopup]);
 
   return (
     <motion.div
@@ -65,17 +117,19 @@ const Galerie = () => {
         </NavLink>
       </div>
       <div className="slide-container">
-        <Slider {...settings}>
+      <Slider {...settings}>
           {images.map((image, index) => (
             <div
               key={index}
               className={index === imageIndex ? "slide activeSlide" : "slide"}
+              onClick={(e) => handleSlideClick(index, e)} // Appeler la fonction avec l'index
             >
-              <img src={image} alt={index} />
+              <img src={image.src} alt={index} />
             </div>
           ))}
         </Slider>
       </div>
+      {isOpenPopup && <Popup image={images[imageIndex]} />}
     </motion.div>
   );
 };
