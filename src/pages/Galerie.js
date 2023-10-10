@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Popup from "../components/Popup";
-import { useEffect } from "react";
 
 function PrevArrow({ onClick }) {
   return (
@@ -25,6 +24,7 @@ function NextArrow({ onClick }) {
 const Galerie = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isOpenPopup, setIsOpenPopup] = useState(false);
+  const [okOpen, setOkOpen] = useState(0);
 
   const images = [
     {
@@ -66,17 +66,18 @@ const Galerie = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
+    afterChange: (current, next) => setOkOpen(current),
   };
 
   const handleSlideClick = (index, e) => {
     // Ouvrir le Popup avec l'index de la diapositive
-    setImageIndex(index);
-    setIsOpenPopup(true);
-    e.stopPropagation(); // Arrêter la propagation de l'événement
+    if (index === imageIndex && okOpen===imageIndex) {
+      setIsOpenPopup(true);
+      e.stopPropagation(); // Arrêter la propagation de l'événement
+    }
   };
 
   useEffect(() => {
-    console.log(isOpenPopup)
     let popup = null;
     if (isOpenPopup) popup = document.querySelector(".popup");
     // Ajoutez un écouteur d'événements pour les clics sur l'ensemble de la page
@@ -89,8 +90,7 @@ const Galerie = () => {
     };
 
     // Ajoutez l'écouteur d'événements lors de l'ouverture du Popup
-    if(isOpenPopup)
-      document.addEventListener("click", handleOutsideClick);
+    if (isOpenPopup) document.addEventListener("click", handleOutsideClick);
 
     // Nettoyez l'écouteur d'événements lors de la fermeture du Popup
     return () => {
@@ -117,7 +117,7 @@ const Galerie = () => {
         </NavLink>
       </div>
       <div className="slide-container">
-      <Slider {...settings}>
+        <Slider {...settings}>
           {images.map((image, index) => (
             <div
               key={index}
