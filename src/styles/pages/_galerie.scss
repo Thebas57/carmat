@@ -48,11 +48,17 @@
   display: flex !important;
   align-items: center;
   cursor: pointer;
+  &:hover{
+    transform: scale(0.8) rotate(6deg);
+  }
 }
 
 .activeSlide {
   transform: scale(1.1);
   opacity: 1;
+  &:hover{
+    transform: scale(1.1);
+  }
 }
 
 .arrow {

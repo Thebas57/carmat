@@ -63,6 +63,7 @@ const Galerie = () => {
     centerMode: true,
     centerPadding: 0,
     arrows: true,
+    focusOnSelect: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
