@@ -79,27 +79,39 @@
       width: max-content;
       height: max-content;
       position: relative;
+      span {
+        position: relative;
+        font-size: 2.2rem;
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke: 0.8px $color-2;
+        width: fit-content;
+        &::before {
+          position: absolute;
+          content: attr(data-text);
+          top: 0;
+          left: 0px;
+          -webkit-text-fill-color: black;
+          width: 0;
+          overflow: hidden;
+          transition: 0.5s;
+          height: 100px;
+          background-color: aliceblue;
+          &:hover {
+            width: 100%;
+          }
+        }
+      }
     }
-    span {
-      position: relative;
-      font-size: 2.2rem;
-      -webkit-text-fill-color: white;
-      -webkit-text-stroke: 0.8px $color-2;
-      width: fit-content;
-    }
-    span::before {
-      position: absolute;
-      content: attr(data-text);
-      top: 0;
-      left: 0px;
-      -webkit-text-fill-color: black;
-      width: 0;
-      overflow: hidden;
-      transition: 0.5s;
-      height: 100px;
-    }
-    span:hover::before {
-      width: 100%;
+    &.hovered {
+      .text span {
+        -webkit-text-fill-color: $color-2;
+        transform: scale(1.2, 1.2);
+        transition: all 0.3s ease-out;
+      }
+      .img img {
+        transform: scale(1.2, 1.2);
+        transition: all 0.3s ease-out;
+      }
     }
   }
 }
