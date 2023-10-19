@@ -6,6 +6,7 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { TfiArrowsVertical, TfiArrowsHorizontal } from "react-icons/tfi";
 
 import Popup from "../components/Popup";
+import VanillaTilt from "vanilla-tilt";
 
 function PrevArrow({ onClick }) {
   return (
@@ -95,11 +96,26 @@ const CollectionItem = ({ id }) => {
     // Ajoutez l'écouteur d'événements lors de l'ouverture du Popup
     if (isOpenPopup) document.addEventListener("click", handleOutsideClick);
 
+    // Sélectionnez la diapositive active
+    const activeSlide = document.querySelector(".slide.activeSlide");
+
+    // Si une diapositive active est trouvée, initialisez l'effet Vanilla Tilt
+    if (activeSlide) {
+      console.log(activeSlide, imageIndex);
+      VanillaTilt.init(activeSlide, {
+        max: 25,
+        speed: 400,
+      });
+    }
+
     // Nettoyez l'écouteur d'événements lors de la fermeture du Popup
     return () => {
       document.removeEventListener("click", handleOutsideClick);
+      if (activeSlide) {
+        activeSlide.vanillaTilt.destroy();
+      }
     };
-  }, [isOpenPopup]);
+  }, [isOpenPopup, imageIndex]);
 
   return (
     <motion.div
@@ -114,10 +130,14 @@ const CollectionItem = ({ id }) => {
           {images.map((image, index) => (
             <div
               key={index}
+              id={index}
               className={index === imageIndex ? "slide activeSlide" : "slide"}
               //onClick={(e) => handleSlideClick(index, e)} // Appeler la fonction avec l'index
             >
-              <img src={image.src} alt={index} />
+              <img
+                src="https://www.paris-art.com/wp-content/uploads/2019/09/penser-en-formes-et-en-couleurs-19-musee-beaux-arts-lyon-01b-Leger-320x403.jpg"
+                alt="item"
+              />
             </div>
           ))}
         </Slider>
@@ -132,13 +152,13 @@ const CollectionItem = ({ id }) => {
         </p>
       </div>
       <div className="indication-carrelage">
-        <div class="container-square">
-          <div class="square">45 x 45</div>
+        <div className="container-square">
+          <div className="square">45 x 45</div>
 
-          <div class="arrow-right">
+          <div className="arrow-right">
             <TfiArrowsVertical />
           </div>
-          <div class="arrow-bottom">
+          <div className="arrow-bottom">
             <TfiArrowsHorizontal />
           </div>
         </div>

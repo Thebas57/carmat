@@ -36,17 +36,15 @@ const Carmat = () => {
         />
       </div>
       <div className="direction">
-        <NavLink to="/galerie">
-          <button className="btn btn-3 btn-3d icon-cog">Galerie</button>
-        </NavLink>
-        <NavLink to="/galerie">
-          <button className="btn-carrelage">GALERIE</button>
-        </NavLink>
-        <NavLink to="/galerie">
-          <button className="btn-carrelage2"><RiContactsFill/></button>
+        <NavLink to="/catalogue">
+          <button className="btn btn-5 btn-5a icon-cog">
+            <span>Catalogue</span>
+          </button>
         </NavLink>
         <NavLink to="/contact">
-          <button className="btn btn-3 btn-3d icon-cog2">Contact</button>
+          <button className="btn btn-5 btn-5a icon-cog2">
+            <span>Contact</span>
+          </button>
         </NavLink>
       </div>
     </motion.div>

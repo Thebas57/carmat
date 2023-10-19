@@ -17,8 +17,8 @@ function App() {
     <div className={!isDayNight ? "App day-theme" : "App night-theme"}>
       <Routes />
       <Song />
-      <BackgroundAnimation />
       {/*
+      <BackgroundAnimation />
       <SwitchDayNight toggleDayNight={toggleDayNight} isDayNight={isDayNight} />
       */}
     </div>

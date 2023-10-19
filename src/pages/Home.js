@@ -9,6 +9,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <BackgroundAnimation />
       <div className="click-container">
         {!isClick ? (
           <div className="click" onClick={(e) => toggleClick()}>

@@ -24,7 +24,7 @@ const Contact = () => {
         <source src="./img/haloween/fond.mp4" type="video/mp4" />
       </video>
       <div className="all-contact-container">
-        <div class="container">
+        <div className="container">
           <div className="grid-item">
             <span className="grid-icon">
               <AiFillHome />

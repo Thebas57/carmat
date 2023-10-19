@@ -20,6 +20,7 @@
     "slick-carousel": "^1.8.1",
     "typeit": "^8.7.1",
     "typeit-react": "^2.6.4",
+    "vanilla-tilt": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

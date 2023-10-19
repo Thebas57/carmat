@@ -11,9 +11,9 @@ const Collection = () => {
       </video>
       <CollectionItem id={id} />
       <div className="btn-galerie">
-        <NavLink to="/">
+        <NavLink to="/catalogue">
           <button className="btn btn-5 btn-5a icon-cart">
-            <span>Accueil</span>
+            <span>Galerie</span>
           </button>
         </NavLink>
       </div>

@@ -20,7 +20,7 @@ const CatalogItem = ({id}) => {
       to={`/collection/${id}`}
     >
       <div className="img">
-        <img src="./img/galerie/pdt1.jpg" alt="item" />
+        <img src="https://www.paris-art.com/wp-content/uploads/2019/09/penser-en-formes-et-en-couleurs-19-musee-beaux-arts-lyon-01b-Leger-320x403.jpg" alt="item" />
       </div>
       <div className="text">
         <span>Dolomia</span>
